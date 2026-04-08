@@ -148,19 +148,6 @@ The script includes robust error handling:
 - Verify column headers are exactly `Wvl` and `Reflect. %`
 - Check for extra whitespace
 
-## Performance
-
-Processing time depends on:
-
-- Number of files
-- Wavelength points per file (typically 300-3000)
-- Disk I/O speed
-
-Typical performance:
-
-- 100 files with 1000 wavelengths each: ~2-5 seconds
-- 1000 files with 1000 wavelengths each: ~20-50 seconds
-
 ## Contributing
 
 Contributions are welcome! Please:
@@ -177,7 +164,9 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Author
 
-**SotKech**
+**Sotirios Kechagias**    
+*PhD Student, University of Florida*    
+[📩 skechagias@ufl.edu](mailto:skechagias@ufl.edu)
 
 ## Citation
 
@@ -187,14 +176,10 @@ If you use this tool in your research, please cite:
 @software{sed_to_csv,
   author = {SotKech},
   title = {SED to CSV Converter},
-  url = {https://github.com/SotKech/sed-to-csv},
+  url = {https://github.com/Soil-Science-AI-Lab/sed-to-csv},
   year = {2026}
 }
 ```
-
-## Support
-
-For issues, questions, or suggestions, please open an [issue](https://github.com/SotKech/sed-to-csv/issues) on GitHub.
 
 ## Changelog
 
