@@ -108,48 +108,6 @@ The output CSV has the following structure:
 - **380, 390, 400, etc.**: Wavelength columns (numbers depend on input data)
 - **Values**: Reflectance percentages
 
-## API Reference
-
-### `psr_to_csv(in_dir, out_file=None)`
-
-Converts SED files to CSV format.
-
-**Parameters:**
-
-- `in_dir` (str): Root directory to search for `.sed` files (recursive)
-- `out_file` (str, optional): Path where CSV output will be saved. If `None`, only returns dataframe
-
-**Returns:**
-
-- `pd.DataFrame`: Combined dataframe with all samples, indexed by file ID
-
-**Raises:**
-
-- `ValueError`: If no `.sed` files found or required data fields are missing
-
-**Example:**
-
-```python
-df = psr_to_csv("./samples", "./output/spectra.csv")
-print(f"Processed {len(df)} samples")
-```
-
-### `_read_sed_metadata_and_data_start(path)`
-
-Internal helper function to extract metadata and locate data section.
-
-**Parameters:**
-
-- `path` (str): Path to a single `.sed` file
-
-**Returns:**
-
-- `tuple`: `(metadata_dict, data_start_line_number)`
-
-**Raises:**
-
-- `ValueError`: If no `Data:` marker found
-
 ## Examples
 
 ### Example 1: Basic Batch Processing
