@@ -38,38 +38,6 @@ cd sed-to-csv
 pip install -r requirements.txt
 ```
 
-Alternatively, install via setup.py:
-
-```bash
-pip install -e .
-```
-
-## Usage
-
-### As a Python Module
-
-```python
-from sed_to_csv import psr_to_csv
-
-# Basic usage - save to CSV
-result = psr_to_csv(
-    in_dir="path/to/sed/files",
-    out_file="output.csv"
-)
-
-# Get dataframe without saving
-df = psr_to_csv(in_dir="path/to/sed/files")
-print(df)
-```
-
-### Command Line
-
-Edit the `if __name__ == "__main__":` block in `sed_to_csv.py` and run:
-
-```bash
-python sed_to_csv.py
-```
-
 ## Input File Format
 
 SED files should follow this structure:
