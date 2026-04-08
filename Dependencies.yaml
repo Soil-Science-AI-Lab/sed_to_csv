@@ -1,0 +1,7 @@
+dependencies:
+  - pandas==2.3.3
+  - numpy==2.3.4
+  - python==3.11.14
+  - python-dateutil==2.9.0post0
+  - pytz==2025.2
+  - tzdata==2025b
