@@ -18,10 +18,9 @@ This utility processes spectral reflectance measurement files (`.sed` format) an
 ## Installation
 
 ### Requirements
-
-- Python 3.7 or higher
-- pandas >= 1.0.0
-- numpy >= 1.18.0
+- pandas>=1.0.0
+- numpy>=1.18.0
+- python>=3.7
 
 ### Setup
 
@@ -35,24 +34,49 @@ cd sed-to-csv
 2. Install dependencies:
 
 ```bash
-pip install -r requirements.txt
+conda env update -f Dependencies.yaml
 ```
+or create an enviroment for this:
+```bash
+conda env create -f Dependencies.yaml
+```
+
 
 ## Input File Format
 
-SED files should follow this structure:
+SED files should follow a similar structure:
 
 ```
-File Name: 19160B9_00001
-Date: 2026-02-05
-Time: 14:30:45
-Temperature (C): 25.5
-Instrument: Spectrophotometer XYZ
+Comment: 
+Version: 2.3 [1.2.6947C]
+File Name: \My Documents\Samples2025.01.29\19160B9_00001.sed
+Instrument: PSR+3500_SN19160B9 [3]
+Detectors: 512,256,256
+Measurement: REFLECTANCE
+Date: 01/29/2026,01/29/2026
+Time: 15:34:22,15:34:38
+Temperature (C): 27.26,8.81,-5.44,27.34,8.81,-5.44
+Battery Voltage: 7.31,7.35
+Averages: 10,10
+Integration: 20,50,30,20,50,30
+Dark Mode: AUTO,AUTO
+Foreoptic: LENS4  {RADIANCE}, LENS4  {RADIANCE}
+Radiometric Calibration: RADIANCE
+Units: W/m^2/sr/nm
+Wavelength Range: 350,2500
+Latitude: n/a
+Longitude: n/a
+Altitude: n/a
+GPS Time: n/a
+Satellites: n/a
+Calibrated Reference Correction File: none
+Channels: 2151
+Columns [2]:
 Data:
 Wvl	Reflect. %
-380	12.34
-390	13.45
-400	14.56
+ 350.0	3.1209
+ 351.0	3.1289
+ 352.0	3.1201
 ...
 ```
 
@@ -66,14 +90,14 @@ Wvl	Reflect. %
 
 The output CSV has the following structure:
 
-| File | Date | Time | Temperature (C) | 380 | 390 | 400 | ... |
+| File | Date | Time | Temperature (C) | 350.0 | 351.0 | 352.0 | ... |
 |------|------|------|-----------------|-----|-----|-----|-----|
 | 19160B9_00001 | 2026-02-05 | 14:30:45 | 25.5 | 12.34 | 13.45 | 14.56 | ... |
 | 19160B9_00002 | 2026-02-05 | 14:31:12 | 25.6 | 12.40 | 13.50 | 14.62 | ... |
 
 - **File**: Sample/file identifier
 - **Date, Time, Temperature**: Extracted metadata
-- **380, 390, 400, etc.**: Wavelength columns (numbers depend on input data)
+- **350.0, 351.0, 352.0, etc.**: Wavelength columns (numbers depend on input data)
 - **Values**: Reflectance percentages
 
 ## Examples
@@ -174,7 +198,7 @@ If you use this tool in your research, please cite:
 
 ```bibtex
 @software{sed_to_csv,
-  author = {SotKech},
+  author = {Sotirios Kechagias},
   title = {SED to CSV Converter},
   url = {https://github.com/Soil-Science-AI-Lab/sed-to-csv},
   year = {2026}
