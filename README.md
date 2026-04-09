@@ -27,8 +27,8 @@ This utility processes spectral reflectance measurement files (`.sed` format) an
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/SotKech/sed-to-csv.git
-cd sed-to-csv
+git clone https://github.com/Soil-Science-AI-Lab/sed_to_csv.git
+cd sed_to_csv
 ```
 
 2. Install dependencies:

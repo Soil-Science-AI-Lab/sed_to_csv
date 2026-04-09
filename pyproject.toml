@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sed_to_csv"
+version = "0.1.0"
+description = "Convert SED spectral data files to CSV format"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Sotirios Kechagias", email = "skechagias@ufl.edu" },
+]
+keywords = ["spectroscopy", "data-processing", "csv", "soil-science"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "pandas>=1.0.0",
+    "numpy>=1.18.0",
+]
+
+[project.scripts]
+sed_to_csv = "sed_to_csv.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/Soil-Science-AI-Lab/sed_to_csv"
+Repository = "https://github.com/Soil-Science-AI-Lab/sed_to_csv"
+Issues = "https://github.com/Soil-Science-AI-Lab/sed_to_csv/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sed_to_csv*"]
